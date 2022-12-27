@@ -1,0 +1,4 @@
+*migrations*
+venv
+.idea/
+*.sqlite3
