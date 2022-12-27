@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
+
 <form method="POST" class="post-form">
         {% csrf_token %}
         {{ form.as_p }}
@@ -15,7 +9,5 @@
             <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>
-{% endif %}
-    </form>
-</body>
-</html>
+        {% endif %}
+</form>
