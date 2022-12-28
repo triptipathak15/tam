@@ -20,11 +20,11 @@ def raise_new_request(request):
 
 def list_requests(request):
     id = 1
-    queryset = LeaveRequest.objects.filter(status='Submitted')
+    queryset = LeaveRequest.objects.all()
     return render(request, "list_my_requests.html", {'rows': queryset})
 
 
 def manage_team_requests(request):
     id = 1
     queryset = LeaveRequest.objects.filter(status='Submitted')
-    return render(request, "list_my_requests.html", {'rows': queryset})
+    return render(request, "manage_team_requests.html", {'rows': queryset})

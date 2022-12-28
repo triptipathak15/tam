@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<button class="btn btn-success">Approve Selected</button>
-<button class="btn btn-warning">Deny Selected</button>
+<button class="btn btn-primary">Cancel Selected</button>
 <div class="container">
     <table class="table">
   <thead>
@@ -25,7 +24,6 @@
            <td>{{r.end_date}}</td>
            <td>{{r.status}}</td>
            <td><input type="checkbox"></td>
-
        </tr>
         {% endfor %}
   </tbody>
