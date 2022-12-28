@@ -26,7 +26,7 @@ class Employee(models.Model):
 
 class LeaveRequest(models.Model):
     employee = models.ForeignKey(Employee,on_delete=models.CASCADE)
-    type = models.CharField(choices=REQUEST_TYPES, max_length=30)
+    type = models.CharField(choices=REQUEST_TYPES, max_length=30, default='VN')
     start_date = models.DateField()
     end_date = models.DateField()
     status = models.CharField(choices=REQUEST_STATUSES, max_length=30, default='Submitted')

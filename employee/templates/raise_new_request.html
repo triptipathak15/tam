@@ -6,11 +6,11 @@
          <h4 class="bold">Leave Request Form</h4><hr>
         {% for field in form %}
         <div class="form-group">
-        <div class="input-group flex-nowrap">
-          <span class="input-group-text col-md-3" id="addon-wrapping">{{field.label_tag}}</span>
-            <span class="col-md-3">{{field}}</span>
-        </div>
-        </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text col-md-6" id="addon-wrapping">{{field.label_tag}}</span>
+                <span class="col-md-6">{{field}}</span>
+             </div>
+            </div>
         {% endfor %}
         <input type="submit" class="save btn btn-success" value="Submit">
      </div>

@@ -14,17 +14,20 @@
     <a class="navbar-brand">ABC Private Ltd.</a>
   </div>
 </nav>
-    <div id="sidebar">
+<div class="modal-body row">
+    <div class="col-md-2">
         {% block sidebar %}
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/admin">Admin</a></li>
+            <li><a href="/raise">New Request</a></li>
+            <li><a href="/list">List My Requests</a></li>
+            <li><a href="/manage">Manage Team Requests</a></li>
         </ul>
         {% endblock %}
     </div>
 
-    <div id="content">
+    <div id="content" class="col-md-10">
         {% block content %}{% endblock %}
     </div>
+</div>
 </body>
 </html>
