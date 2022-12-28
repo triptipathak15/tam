@@ -18,6 +18,18 @@ def raise_new_request(request):
     return render(request, "raise_new_request.html", {'form': leave_request})
 
 
+def change_request_status(request):
+    request_ids = request.GET['leave_request_ids'].split(',')
+    new_status = request.GET['status']
+    for request_id in request_ids:
+        leave_request = LeaveRequest.objects.get(id=int(request_id))
+        leave_request.status = new_status
+        leave_request.save()
+    queryset = LeaveRequest.objects.all()
+    return render(request, "list_my_requests.html", {'rows': queryset})
+
+
+
 def list_requests(request):
     id = 1
     queryset = LeaveRequest.objects.all()
@@ -26,5 +38,5 @@ def list_requests(request):
 
 def manage_team_requests(request):
     id = 1
-    queryset = LeaveRequest.objects.filter(status='Submitted')
+    queryset = LeaveRequest.objects.all()
     return render(request, "manage_team_requests.html", {'rows': queryset})

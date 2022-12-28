@@ -3,6 +3,7 @@ from django.db import models
 
 REQUEST_STATUSES= (('Submitted','Submitted'),
                    ('Approved','Approved'),
+                   ('Denied','Denied'),
                    ('Cancelled','Cancelled'))
 REQUEST_TYPES = (('VN','Vacation'),
                  ('SL','Sick Leave'),
@@ -32,5 +33,6 @@ class LeaveRequest(models.Model):
     status = models.CharField(choices=REQUEST_STATUSES, max_length=30, default='Submitted')
 
     def __str__(self):
-        return f"{self.employee.first_name} - {self.type} from {self.start_date} to " \
-               f"{self.end_date}"
+        return str(self.id)
+        # return f"{self.employee.first_name} - {self.type} from {self.start_date} to " \
+        #        f"{self.end_date}"
