@@ -30,6 +30,7 @@ class LeaveRequest(models.Model):
     type = models.CharField(choices=REQUEST_TYPES, max_length=30, default='VN')
     start_date = models.DateField()
     end_date = models.DateField()
+    comment = models.TextField(blank=True, null=True)
     status = models.CharField(choices=REQUEST_STATUSES, max_length=30, default='Submitted')
 
     def __str__(self):

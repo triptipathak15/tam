@@ -3,14 +3,16 @@
 <div class="container text-right" id="manager_div">
 <form method="POST" class="post-form">
     {% csrf_token %}
-     <div class="container-fluid col-md-5">
+     <div class="container-fluid">
              <h4 class="text-center"><span class="badge bg-info">New Request Form</span></h4>
         {% for field in form %}
         <div class="form-group">
+<!--            {% if field.name != "employee" %}-->
             <div class="input-group flex-nowrap">
-                <span class="input-group-text col-md-6" id="addon-wrapping">{{field.label_tag}}</span>
-                <span class="form-control col-md-6">{{field}}</span>
+                <span class="input-group-text col-md-4" id="addon-wrapping">{{field.label_tag}}</span>
+                <span class="form-control col-md-10">{{field}}</span>
              </div>
+<!--            {% endif %}-->
             </div>
         {% endfor %}
         <input type="submit" class="save btn btn-success" value="Submit">

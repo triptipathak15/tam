@@ -1,6 +1,5 @@
 $(function() {
-    $('#list_table').DataTable();
-    $('#manager_table').DataTable();
+    $('.table').DataTable();
 });
 
 function reload(){
