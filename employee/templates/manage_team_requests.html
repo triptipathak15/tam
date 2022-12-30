@@ -4,38 +4,6 @@
     <button class="btn btn-success" id="btn_approve" onclick="perform_manager_action(this.id)">Approve Selected</button>
     <button class="btn btn-warning" id="btn_deny" onclick="perform_manager_action(this.id)">Deny Selected</button>
     <h4 class="text-center"><span class="badge bg-info">Team requests</span></h4>
-    <table class="table" id="manager_table">
-      <thead>
-        <tr>
-            <th scope="col">Request ID</th>
-          <th scope="col">Employee ID</th>
-          <th scope="col">Employee Name</th>
-          <th scope="col">Request Type</th>
-          <th scope="col">Start Date</th>
-          <th scope="col">End Date</th>
-          <th scope="col">Status</th>
-            <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-           {% for r in rows %}
-           <tr>
-               <td>{{r.id}}</td>
-                <td>{{r.employee.employee_id}}</td>
-               <td>{{r.employee.first_name}} {{r.employee.last_name}}</td>
-               <td>{{r.type}}</td>
-               <td>{{r.start_date}}</td>
-               <td>{{r.end_date}}</td>
-               <td>{{r.status}}</td>
-               <td>
-                {% if r.status == "Submitted" %}
-                    <input type="checkbox">
-                {% endif %}
-               </td>
-
-           </tr>
-            {% endfor %}
-      </tbody>
-    </table>
+    {% include 'requests_table.html' %}
 </div>
 {% endblock %}
