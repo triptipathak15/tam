@@ -2,6 +2,7 @@
 {% block content %}
 <div class="container text-right">
 <button class="btn btn-primary"  id="btn_cancel" onclick="perform_manager_action(this.id)" >Cancel Selected</button>
+    <h4 class="text-center"><span class="badge bg-info">My Leave requests</span></h4>
     <table class="table" id="list_table">
       <thead>
         <tr>
@@ -25,7 +26,11 @@
                <td>{{r.start_date}}</td>
                <td>{{r.end_date}}</td>
                <td>{{r.status}}</td>
-               <td><input id="list_checkbox_{{r.employee.employee_id}}" type="checkbox"></td>
+               <td>
+                   {% if r.status == "Submitted" %}
+                        <input type="checkbox">
+                   {% endif %}
+               </td>
            </tr>
             {% endfor %}
       </tbody>

@@ -4,9 +4,11 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" src="{% static 'jquery/css/datatables.min.css' %}"/>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'employee/js/action_request.js' %}"></script>
     <script type="text/javascript" src="{% static 'jquery/js/jquery-3.6.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery/js/datatables.min.js' %}"></script>
+    <script src="{% static 'employee/js/action_request.js' %}"></script>
     <title>{% block title %} Employee Management {% endblock %}</title>
 </head>
 
@@ -30,6 +32,7 @@
     <div id="content" class="col-md-10">
         {% block content %}{% endblock %}
     </div>
+    {% include 'confirmation_popup.html' %}
 </div>
 </body>
 </html>

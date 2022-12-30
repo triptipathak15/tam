@@ -31,12 +31,10 @@ def change_request_status(request):
 
 
 def list_requests(request):
-    id = 1
-    queryset = LeaveRequest.objects.all()
+    queryset = LeaveRequest.objects.filter(employee__employee_id=1)
     return render(request, "list_my_requests.html", {'rows': queryset})
 
 
 def manage_team_requests(request):
-    id = 1
-    queryset = LeaveRequest.objects.all()
+    queryset = LeaveRequest.objects.filter(employee__manager_employee_id=1).exclude(status="Cancelled")
     return render(request, "manage_team_requests.html", {'rows': queryset})

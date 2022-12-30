@@ -27,7 +27,12 @@
                <td>{{r.start_date}}</td>
                <td>{{r.end_date}}</td>
                <td>{{r.status}}</td>
-               <td><input type="checkbox"></td>
+               <td>
+                {% if r.status == "Submitted" %}
+                    <input type="checkbox">
+                {% endif %}
+               </td>
+
            </tr>
             {% endfor %}
       </tbody>
