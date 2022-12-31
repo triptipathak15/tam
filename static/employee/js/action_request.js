@@ -12,11 +12,13 @@ $(function() {
         }
     }
 });
-
+function show_popup(msg){
+    document.getElementById('popup_text').innerText = msg
+    $("#confirmation_modal").show()
+}
 function reload(){
     location.reload()
 }
-
 function perform_manager_action(button_id) {
       var result = []
       var status_mapper = { 'btn_approve':'Approved','btn_deny':'Denied','btn_cancel':'Cancelled'}
@@ -28,13 +30,20 @@ function perform_manager_action(button_id) {
         });
         result.push(row[0]);
       });
-       $.ajax({
-        url : '/change_request_status',
-        data : { leave_request_ids : result.join(), status : new_status},
-        success : function(value) {
-            $("#confirmation_modal").show()
-        }
-    });
+      if (result == '') {
+            msg = "You have not selected anytime for submission!"
+            show_popup(msg)
+      }
+      else{
+           $.ajax({
+                url : '/change_request_status',
+                data : { leave_request_ids : result.join(), status : new_status},
+                success : function(value) {
+                    msg = "This request has been successfully updated!"
+                    show_popup(msg)
+                }
+            });
+      }
 }
 
 function cancel_request() {

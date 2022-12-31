@@ -3,19 +3,19 @@
 <head>
     {% load static %}
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" src="{% static 'jquery/css/datatables.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" src="{% static 'employee/css/employee.css' %}"/>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'jquery/js/jquery-3.6.3.js' %}"></script>
     <script type="text/javascript" src="{% static 'jquery/js/datatables.min.js' %}"></script>
     <script src="{% static 'employee/js/action_request.js' %}"></script>
-    <title>{% block title %} Employee Management {% endblock %}</title>
+    <title>{% block title %} Employees Leave Management {% endblock %}</title>
 </head>
 
 <body>
 <nav class="navbar-dark bg-primary">
   <div class="container-fluid text-center">
-    <p class="navbar-brand">Alpha Services Private Ltd.</p>
+    <span class="navbar-brand"><b>Alpha Services Private Ltd.</b></span>
   </div>
 </nav>
 <div class="modal-body row">
