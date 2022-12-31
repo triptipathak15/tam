@@ -1,5 +1,6 @@
 # Create your models here.
 from django.db import models
+from django.contrib.auth.models import User
 
 REQUEST_STATUSES= (('Submitted','Submitted'),
                    ('Approved','Approved'),
@@ -35,5 +36,3 @@ class LeaveRequest(models.Model):
 
     def __str__(self):
         return str(self.id)
-        # return f"{self.employee.first_name} - {self.type} from {self.start_date} to " \
-        #        f"{self.end_date}"
