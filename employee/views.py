@@ -4,7 +4,7 @@ from .leave_request_form import LeaveRequestForm
 from .models import LeaveRequest
 
 total = 20
-
+id = 1
 def home(request):
     approved=1
     submitted=4
@@ -35,10 +35,10 @@ def change_request_status(request):
 
 
 def list_requests(request):
-    queryset = LeaveRequest.objects.filter(employee__employee_id=1)
+    queryset = LeaveRequest.objects.filter(employee__employee_id=id)
     return render(request, "list_my_requests.html", {'rows': queryset})
 
 
 def manage_team_requests(request):
-    queryset = LeaveRequest.objects.filter(employee__manager_employee_id=1).exclude(status="Cancelled")
+    queryset = LeaveRequest.objects.filter(employee__manager_employee_id=id).exclude(status="Cancelled")
     return render(request, "manage_team_requests.html", {'rows': queryset})

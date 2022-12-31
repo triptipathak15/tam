@@ -15,9 +15,10 @@ class LeaveRequestForm(ModelForm):
             'start_date': DateInput(),
             'end_date': DateInput()
         }
-        def clean(self):
-            date = self.cleaned_data['end_date']
-            print("***********",date)
-            if date < datetime.date.today():
-                raise ValidationError("The date cannot be in the past!")
-            return date
+        def clean_end_date(self):
+            start_date = self.cleaned_data['start_date']
+            end_date = self.cleaned_data['end_date']
+            print("***********",end_date)
+            if start_date > end_date:
+                raise ValidationError("The start date can not be later than end date")
+            return end_date

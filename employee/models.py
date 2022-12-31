@@ -8,8 +8,8 @@ REQUEST_STATUSES= (('Submitted','Submitted'),
 REQUEST_TYPES = (('VN','Vacation'),
                  ('SL','Sick Leave'),
                  ('ML','Maternity Leave'),
-                 ('BL','Bereavement Leave'),
-                 ('CO','Compensation Off'),
+                 ('BL','Bereavement'),
+                 ('CO','Comp. Off'),
                  ('VL','Voluntary Leave'))
 
 
