@@ -2,6 +2,7 @@ import datetime
 from django.forms import ModelForm, DateInput, ValidationError
 from .models import LeaveRequest
 
+
 class DateInput(DateInput):
     input_type = 'date'
 
@@ -14,7 +15,7 @@ class LeaveRequestForm(ModelForm):
             'start_date': DateInput(),
             'end_date': DateInput()
         }
-        def clean_date(self):
+        def clean(self):
             date = self.cleaned_data['end_date']
             print("***********",date)
             if date < datetime.date.today():

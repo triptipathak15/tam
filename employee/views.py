@@ -3,9 +3,14 @@ from django.shortcuts import render
 from .leave_request_form import LeaveRequestForm
 from .models import LeaveRequest
 
+total = 20
 
 def home(request):
-    return render(request, "base.html")
+    approved=1
+    submitted=4
+    declined=4
+    return render(request, "home.html", {"approved":approved,"submitted":submitted,"declined":declined,
+                                         "remaining":total-(approved+submitted+declined)})
 
 
 def raise_new_request(request):
@@ -27,7 +32,6 @@ def change_request_status(request):
         leave_request.save()
     queryset = LeaveRequest.objects.all()
     return render(request, "list_my_requests.html", {'rows': queryset})
-
 
 
 def list_requests(request):

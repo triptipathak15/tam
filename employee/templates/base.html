@@ -15,18 +15,12 @@
 <body>
 <nav class="navbar-dark bg-primary">
   <div class="container-fluid text-center">
-    <p class="navbar-brand">Alpha Private Ltd.</p>
+    <p class="navbar-brand">Alpha Services Private Ltd.</p>
   </div>
 </nav>
 <div class="modal-body row">
     <div class="col-md-2">
-        {% block sidebar %}
-        <ul>
-            <li><a href="/raise">New Request</a></li>
-            <li><a href="/list">List My Requests</a></li>
-            <li><a href="/manage">Manage Team Requests</a></li>
-        </ul>
-        {% endblock %}
+        {% include 'sidebar.html' %}
     </div>
 
     <div id="content" class="col-md-10">

@@ -7,12 +7,12 @@
              <h4 class="text-center"><span class="badge bg-info">New Request Form</span></h4>
         {% for field in form %}
         <div class="form-group">
-<!--            {% if field.name != "employee" %}-->
+           {% if field.name != "employee" %}
             <div class="input-group flex-nowrap">
                 <span class="input-group-text col-md-4" id="addon-wrapping">{{field.label_tag}}</span>
                 <span class="form-control col-md-10">{{field}}</span>
              </div>
-<!--            {% endif %}-->
+            {% endif %}
             </div>
         {% endfor %}
         <input type="submit" class="save btn btn-success" value="Submit">
