@@ -19,6 +19,8 @@ def raise_new_request(request):
         if leave_request.is_valid():
             messages.success(request, "Leave Request submitted successfully!")
             leave_request.save()
+        # else:
+        #     messages.error(request, "Start date can not be later than end date")
     leave_request = LeaveRequestForm()
     return render(request, "raise_new_request.html", {'form': leave_request})
 

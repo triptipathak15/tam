@@ -1,5 +1,8 @@
 import datetime
-from django.forms import ModelForm, DateInput, ValidationError
+from django.utils.translation import gettext_lazy as _
+from django.forms import ModelForm, DateInput, ValidationError, Textarea
+from django.db import models
+from django.db.models import F,Q, CheckConstraint
 from .models import LeaveRequest
 
 
@@ -13,12 +16,11 @@ class LeaveRequestForm(ModelForm):
         exclude = ['status']
         widgets = {
             'start_date': DateInput(),
-            'end_date': DateInput()
+            'end_date': DateInput(),
+            'comment': Textarea(attrs={'cols': 40, 'rows': 5}),
         }
-        def clean_end_date(self):
-            start_date = self.cleaned_data['start_date']
-            end_date = self.cleaned_data['end_date']
-            print("***********",end_date)
-            if start_date > end_date:
-                raise ValidationError("The start date can not be later than end date")
-            return end_date
+
+    def clean(self):
+        if self.cleaned_data["start_date"] > self.cleaned_data["end_date"]:
+            raise ValidationError("The start date can not be later than end date")
+        return self.cleaned_data

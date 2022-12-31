@@ -7,7 +7,6 @@ $(function() {
         split_array = anchor[i].href.split('/')
         selected = split_array[split_array.length-1]
         if(selected == current) {
-        console.log(anchor[i])
             anchor[i].className="active nav-link"
         }
     }
