@@ -1,5 +1,10 @@
 <h4>Assuming we are working for a company called Alpha Services Pvt Ltd
 - This is an app that manages leaves of the employees
+- Tech stack used is as follows:
+    - Django framework for end to end web development
+    - For front end I have used django templates
+
+  
   - It has provision to do following
     - In the home page, I can view total number of leaves approved, submitted, declined
     - Raised request as an employee
