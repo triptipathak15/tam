@@ -1,6 +1,36 @@
-<h2>Log In</h2>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" src="{% static 'jquery/css/datatables.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" src="{% static 'employee/css/employee.css' %}"/>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery/js/jquery-3.6.3.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery/js/datatables.min.js' %}"></script>
+    <script src="{% static 'employee/js/action_request.js' %}"></script>
+    <title>{% block title %} Employees Leave Management {% endblock %}</title>
+</head>
+
+<body>
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
+     <div class="col-md-8 justify-content-center">
+         <h2>Log In</h2>
+        <div class="form-group">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text col-md-2" id="addon-wrapping"><h6>Username</h6></span>
+                <span class="form-control col-md-2"><input name="username" placeholder="username"></span>
+             </div>
+        </div>
+       <div class="form-group">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text col-md-2" id="addon-wrapping"><h6>Password</h6></span>
+                <span class="form-control col-md-2"><input name="password" placeholder="Password"></span>
+             </div>
+        </div>
+        <input type="submit" class="save btn btn-success" value="Log In">
+         {{form.errors}}
+     </div>
 </form>
+</body>
+</html>

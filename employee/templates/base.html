@@ -14,8 +14,14 @@
 
 <body>
 <nav class="navbar-dark bg-primary">
-  <div class="container-fluid text-center">
-    <span class="navbar-brand"><b>Alpha Services Private Ltd.</b></span>
+  <div class="container-fluid">
+      <div class="text-center col">
+        <span class="navbar-brand text-center "><b>Alpha Services Private Ltd.</b></span>
+      </div>
+      <div class="text-right col">
+          <span class="navbar-brand text-center ">Hello {{request.user}}</span>
+          <button><a href="{% url 'logout' %}">Signout</a></button>
+      </div>
   </div>
 </nav>
 <div class="modal-body row">

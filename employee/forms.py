@@ -1,8 +1,4 @@
-import datetime
-from django.utils.translation import gettext_lazy as _
 from django.forms import ModelForm, DateInput, ValidationError, Textarea
-from django.db import models
-from django.db.models import F,Q, CheckConstraint
 from .models import LeaveRequest
 
 
@@ -14,6 +10,7 @@ class LeaveRequestForm(ModelForm):
     class Meta:
         model = LeaveRequest
         exclude = ['status']
+        fields = ['type','comment','start_date','end_date']
         widgets = {
             'start_date': DateInput(),
             'end_date': DateInput(),
