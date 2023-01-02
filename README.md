@@ -14,6 +14,10 @@
 In order to run the code, we need to do following
 - Go to location of manage.py file and run the following
 - python manage.py runserver
+There are 3 users
+- greg, greg(the manager)
+- tripti, tripti (the employee)
+- ceo, Test@123 (the manager)
 
 #Todo
 My next steps are to do the following:
