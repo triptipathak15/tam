@@ -1,5 +1,3 @@
-*migrations*
-venv
 .idea/
 *.sqlite3
 *pycache*
