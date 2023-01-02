@@ -21,11 +21,9 @@ There are 3 users
 
 #Todo
 My next steps are to do the following:
-1. Auth and Authorization
-   (I know I can map default USer to Employee and use that for authentication - I am on my way to do it)
+1. Limit the /manage api to only managers
 2. Some validations like:
-   - Manager is correctly selected since it's a free field
-   - Proper error messages if form validation fails
+   Proper error messages if form validation fails
 3. Deploy this app to AWS
 
 Note:
