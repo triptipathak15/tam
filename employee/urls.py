@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from employee.views import home, raise_new_request, list_requests, \
     manage_team_requests, change_request_status, loginPage, logoutPage
 
@@ -28,4 +30,4 @@ urlpatterns = [
     path('change_request_status',change_request_status),
     path('manage', manage_team_requests),
     # path("accounts/", include("django.contrib.auth.urls")),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
