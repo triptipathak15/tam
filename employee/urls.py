@@ -20,7 +20,7 @@ from employee.views import home, raise_new_request, list_requests, \
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', loginPage),
+    path('login/', loginPage, name="login"),
     path('logout/', logoutPage, name="logout"),
     path('home/', home),
     path('raise', raise_new_request),
